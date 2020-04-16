@@ -36,7 +36,7 @@ $ conda install pystan arviz
 
 **Legacy note:** As explained above, an environment including PyStan uses Anaconda's compilation tools. If you are using the current version of `conda`, you may skip ahead to "Test PyStan." *If you are using an older version of `conda`*, on some platforms, `conda` will notify the user of this by displaying shell environment variables that are being set to support PyStan. In my testing, on Ubuntu 18 and Windows 10, conda hides these manipulations from the user, but on macOS, it displays the settings, (1) when PyStan is installed, (2) when an environment including PyStan is activated, and (3) when an environment is deactivated (in which case the settings are reset to default values).
 
-For example, on installation and activation in macOS, I see the following notification of environment variable settings:
+For example, on installation and activation in macOS using older versions of `conda`, you may see a notification of environment variable settings resembling this:
 
 ```bash
 INFO: deactivate_clang_osx-64.sh made the following environmental changes:
@@ -52,7 +52,7 @@ INFO: activate_clang_osx-64.sh made the following environmental changes:
 [quite a few similar lines follow...]
 ```
 
-In my Linux shell, I see:
+In a Linux shell, you may see a notification like this:
 
 ```bash
 INFO: deactivate-gxx_linux-64.sh made the following environmental changes:
