@@ -4,7 +4,7 @@
 
 We will use [PyStan: The Python Interface to Stan](https://pystan.readthedocs.io/en/latest/).
 
-**Shedule your PyStan installation and testing appropriately.**  Depending on what software you may already have installed, some steps of this setup may require time-consuming downloads. And there may be installation problems with some platforms. The earlier you can discover problems, the more likely it is that we can find a fix in time for assignments that use Stan.
+**Schedule your PyStan installation and testing appropriately.**  Depending on what software you may already have installed, some steps of this setup may require time-consuming downloads. And there may be installation problems with some platforms. The earlier you can discover problems, the more likely it is that we can find a fix in time for assignments that use Stan.
 
 ### Installing PyStan in the `bda20` environment
 
