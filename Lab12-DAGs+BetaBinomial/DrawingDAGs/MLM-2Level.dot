@@ -1,0 +1,34 @@
+/*
+MLM-2Level.dot
+
+Basic 2-level multilevel model for measurements of objects
+comprising a cosmic population.
+
+Render with:
+dot -Tpng -o MLM-2Level.png MLM-2Level.dot
+
+Created 2013-03-19 by Tom Loredo
+*/
+
+digraph MLM2Level {
+    nodesep="0.9"
+    ranksep="0.9 equally"
+
+    node [shape=circle]
+    
+    // Population-level parameters (hyperparameters):
+    PopnParams [label="H"]
+
+    // Sources as a plate (cluster):
+    subgraph cluster_source {
+        // Source characteristics:
+        SourceChar [label="chi_i"]
+    
+        // Observed data:
+        Data [label="D_i"]
+
+        SourceChar -> Data
+    }
+
+    PopnParams -> SourceChar
+}
