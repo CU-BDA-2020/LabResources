@@ -735,7 +735,7 @@ class StanFitter:
 
         if control is None:
             control = {'adapt_delta' : 0.95}
-        print('**** control:', control)
+            print('\n>>> Using conservative adapt_delta = 0.95 (vs. Stan default of 0.8). <<<\n')
 
         self.n_iter = n_iter
         # The actual fit!
