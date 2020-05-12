@@ -457,7 +457,7 @@ class StanFitResults:
         # Provide samples merged from thinned chains.  These are views of
         # the chains; the data are not copied.
         clen, nc, npar = self.chains.shape  # chain length, # chains, # params
-        tb = self.thinned_by = int(np.ceil(clen / self.min_ess))
+        tb = self.thinned_by = int(np.ceil(nc*clen / self.min_ess))
         for name in self.par_names:
             attr_name = self.par_attr_names[name]
             if not self.par_dims[name]:  # scalar param
@@ -734,14 +734,14 @@ class StanFitter:
             self.n_chains = n_chains
 
         if control is None:
-            control = {'adapt_delta' : 0.95}
+            control = {'adapt_delta': 0.95}
             print('\n>>> Using conservative adapt_delta = 0.95 (vs. Stan default of 0.8). <<<\n')
 
         self.n_iter = n_iter
         # The actual fit!
         start_time = timeit.default_timer()
         fit = self.model.sampling(data=self.data, chains=self.n_chains,
-                                  iter=self.n_iter, n_jobs=self.n_jobs, 
+                                  iter=self.n_iter, n_jobs=self.n_jobs,
                                   control=control, **kwds)
         elapsed = timeit.default_timer() - start_time
         # fit = pystan.stan(fit=self.fit, data=self.data, chains=self.n_chains,
